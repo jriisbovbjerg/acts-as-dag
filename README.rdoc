@@ -32,6 +32,7 @@ Yes, but I think they aren't as fast or feature filled. Flogic has a good simple
 * O(1) lookups, no breath or depth first searching
 * O(x*y) insert, update and delete, where x & y are the number of ancestors and descendants of a node.
  
+ --- Added option to have more than one link between same two nodes... ( actualy I just have removed the validity check,  I have no idea if it's going to work... /jriisbovbjerg
 == Requirements
 
 Version 1.x of Acts As Dag uses named_scope so your going to need Rails 2.1 or above.
