@@ -22,7 +22,14 @@ module Dag
       sink = self::EndPoint.from(descendant)
       self.first :conditions => self.conditions_for(source, sink).merge!({direct_column_name => true})
     end
-
+    
+    #Finds all edge between two points, Must be direct
+    def find_edges(ancestor, descendant)
+      source = self::EndPoint.from(ancestor)
+      sink = self::EndPoint.from(descendant)
+      self.all :conditions => self.conditions_for(source, sink).merge!({direct_column_name => true})
+    end
+    
     #Finds a link between two points
     def find_link(ancestor, descendant)
       source = self::EndPoint.from(ancestor)
