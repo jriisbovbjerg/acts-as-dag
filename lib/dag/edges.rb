@@ -37,6 +37,13 @@ module Dag
       self.first :conditions => self.conditions_for(source, sink)
     end
 
+    #Finds a link between two points
+    def find_links(ancestor, descendant)
+      source = self::EndPoint.from(ancestor)
+      sink = self::EndPoint.from(descendant)
+      self.all :conditions => self.conditions_for(source, sink)
+    end
+
     #Finds or builds an edge between two points
     def find_or_build_edge(ancestor, descendant)
       edge = self.find_edge(ancestor, descendant)
